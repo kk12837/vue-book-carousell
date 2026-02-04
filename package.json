@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "pdfjs-dist": "^5.4.624",
     "pinia": "^2.0.30",
     "vue": "^3.3.4",
     "vue-router": "^4.2.0"

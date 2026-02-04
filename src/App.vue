@@ -10,7 +10,7 @@
          <section>
             <div class="bg-white p-4 rounded shadow">
                <h2 class="text-lg font-semibold mb-3">Books</h2>
-               <BookCarousell :books="books" />
+               <BookCarousell :books="books" :auto-rotate="true" />
             </div>
          </section>
       </main>
@@ -19,11 +19,18 @@
 
 <script setup>
 import BookCarousell from './components/BookCarousell.vue'
+import examplePdf from './pdf/example.pdf?url'
+
+const samplePdfs = [
+   examplePdf,
+   'https://file-examples-com.github.io/uploads/2017/10/file-example_PDF_1MB.pdf',
+   'https://www.orimi.com/pdf-test.pdf'
+]
 
 const books = Array.from({ length: 50 }, (_, i) => ({
    title: `Book ${i + 1}`,
    image: `https://picsum.photos/seed/book${i + 1}/300/400`,
-   source: ''
+   source: i < samplePdfs.length ? samplePdfs[i] : ''
 }))
 </script>
 
